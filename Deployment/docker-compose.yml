@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  inv.contactmanager.api:
+    container_name: inv.contactmanager.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - TZ=Europe/Sofia
+    build:
+      context: ../
+      dockerfile: ContactManager/Api/Dockerfile.Development
+    ports:
+      - "3000:80"
+    depends_on:
+      - contactmanager.db
+    restart: unless-stopped
+  contactmanager.db:
+    container_name: contactmanager.db
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 1qaz!QAZ
+      POSTGRES_USER: papa_joo
+    ports:
+      - "5432:5432"
+    restart: always

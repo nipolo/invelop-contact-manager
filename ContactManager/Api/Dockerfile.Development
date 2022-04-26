@@ -1,0 +1,25 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["ContactManager/Api/INV.ContactManager.Api.csproj", "ContactManager/Api/"]
+COPY ["ContactManager/Application.Commands/INV.ContactManager.Application.Commands.csproj", "ContactManager/Application.Commands/"]
+COPY ["ContactManager/Data/INV.ContactManager.Data.csproj", "ContactManager/Data/"]
+COPY ["Common/Libraries/INV.Common.Libraries.csproj", "Common/Libraries/"]
+COPY ["ContactManager/Application.Queries/INV.ContactManager.Application.Queries.csproj", "ContactManager/Application.Queries/"]
+RUN dotnet restore "ContactManager/Api/INV.ContactManager.Api.csproj"
+COPY . .
+WORKDIR "/src/ContactManager/Api"
+RUN dotnet build "INV.ContactManager.Api.csproj" -c Development -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "INV.ContactManager.Api.csproj" -c Development -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "INV.ContactManager.Api.dll"]
