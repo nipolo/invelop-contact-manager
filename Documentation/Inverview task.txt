@@ -23,8 +23,9 @@ Angular frontend:
 	- cypress e2e test (1 is enough)
 	
 Notes by the developer:
-	- CQRS not needed (unnecessary complexity)
-	- Rich domain model not needed (unnecessary complexity)
-	- Create, Load and Update methods/functions do not accept commands and states as a params because the domain objects should be isolated from data and transport/presentation layers
-	- Mappers have been deliberately avoided
-	- Add functionality for friend requests between users and assign directly to the theirs contact lists
+    - CQRS is not needed (unnecessary complexity)
+        - The command part of this pattern is used for complex processes. The traditional RESTful API approach is perfect for CRUD opperations
+        - Check [this](https://github.com/nipolo/invelop-contact-manager/tree/feature/replace-domain-services-with-MediatR) branch for implementation with MediatR library instead of domain services
+    - Rich domain models are not needed (unnecessary complexity)
+    - Create, Load and Update methods/functions do not accept commands and states as params because the domain objects should be isolated from data and transport/presentation layers
+    - Mappers have been avoided for a reason

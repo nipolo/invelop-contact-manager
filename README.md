@@ -49,3 +49,17 @@ Import Postman collections and environments from [here](ContactManager/Tests)
 1. Open Postman with the imported collections and environments
 1. Choose **ContactManager-BETA** environment
 1. Execute *Create contact*, *Update contact*, *Get all contacts* and *Delete contact* requests
+
+## Notes
+   - CQRS is not needed (unnecessary complexity)
+      - The command part of this pattern is used for complex processes. The traditional RESTful API approach is perfect for CRUD opperations
+      - Check [this](https://github.com/nipolo/invelop-contact-manager/tree/feature/replace-domain-services-with-MediatR) branch for implementation with MediatR library instead of domain services 
+   - Rich domain models are not needed (unnecessary complexity)
+   - Create, Load and Update methods/functions do not accept commands and states as params because the domain objects should be isolated from data and transport/presentation layers
+   - Mappers have been avoided for a reason
+
+
+
+
+
+
