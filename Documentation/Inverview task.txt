@@ -1,0 +1,30 @@
+Create a simple web app for managing personal contacts
+
+Required data:
+	- first name
+	- surname
+	- D.O.B
+	- address
+	- phone number
+	- IBAN
+
+The data must be persisted.
+
+There are a few additional paradigms/technologies/techniques we are interested to see:
+	- .NET Backend:
+	- EF Core for db communication (any db)
+	- FluentValidation for models & entities
+	- CQRS pattern
+	- Rich Domain Model
+
+Angular frontend:
+	- ngrx Store
+	- PrimeNG components
+	- cypress e2e test (1 is enough)
+	
+Notes by the developer:
+	- CQRS not needed (unnecessary complexity)
+	- Rich domain model not needed (unnecessary complexity)
+	- Create, Load and Update methods/functions do not accept commands and states as a params because the domain objects should be isolated from data and transport/presentation layers
+	- Mappers have been deliberately avoided
+	- Add functionality for friend requests between users and assign directly to the theirs contact lists

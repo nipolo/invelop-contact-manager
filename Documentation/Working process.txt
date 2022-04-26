@@ -1,0 +1,31 @@
+## Story: Create contact manager api server
+### Tasks list
+1. Initial setup
+    - Create the architecture
+    - Setup new repo, solution, projects
+    - Create Dockerfile-s, docker-compose project, environments and deploy locally
+1. Add endpoints for commands/queries for add/update/delete a contact
+
+## Story: Create contact Manager UI server
+### Tasks list
+1. Initial setup
+    - Setup new repo
+    - Create the Angular project
+    - Add core/shared modules
+    - Create Dockerfile-s, environments and deploy locally
+1. Contacts page
+    - A table with contacts list and pagination
+    - Add user state and add actions for add, update, remove a contact
+    - Options for add, edit, delete a record (contact)
+    - Add new page for create/update a contact
+
+## Story: Create e2e test with cypress
+### Tasks list
+1. Create test for add a contact and then view that it is added
+1. Create test that update existing contact and then view that it is modified
+1. Create test that remove existing contact and then view that it is removes
+
+## Story: Beta deployment and update README.md file (optional)
+### Tasks list
+1. Deploy on EC2 machine both the application
+1. Update README.md file and complete the application

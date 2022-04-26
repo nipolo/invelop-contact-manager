@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "7066a6c8-719d-400e-99e6-944dc6869284",
+		"name": "INV.ContactManager.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Borislav\",\r\n    \"surname\": \"Valkov\",\r\n    \"birthDate\": \"2022-07-10T00:00:00.0000000Z\",\r\n    \"address\": {\r\n        \"line1\": \"test line 1\",\r\n        \"line2\": \"test line 2\",\r\n        \"city\": \"test city\",\r\n        \"postcode\": \"test postcode\",\r\n        \"country\": \"Bulgaria\"\r\n    },\r\n    \"phoneNumber\": \"0888888888\",\r\n    \"IBAN\": \"BG12-AAAA-BBBB-CCCC-DDDD-EE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ApiUrl}}/contacts",
+					"host": [
+						"{{ApiUrl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update contact",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{ContactId}},\r\n    \"firstName\": \"Borislav\",\r\n    \"surname\": \"Valkov\",\r\n    \"birthDate\": \"2022-07-10T00:00:00.0000000Z\",\r\n    \"address\": {\r\n        \"line1\": \"test line 1 - changed\",\r\n        \"line2\": \"test line 2\",\r\n        \"city\": \"test city\",\r\n        \"postcode\": \"test postcode\",\r\n        \"country\": \"Bulgaria\"\r\n    },\r\n    \"phoneNumber\": \"0888888888\",\r\n    \"IBAN\": \"BG20-AAAA-BBBB-CCCC-DDDD-EE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ApiUrl}}/contacts",
+					"host": [
+						"{{ApiUrl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ApiUrl}}/contacts/all?pageNum=1&pageSize=10",
+					"host": [
+						"{{ApiUrl}}"
+					],
+					"path": [
+						"contacts",
+						"all"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{ContactId}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ApiUrl}}/contacts",
+					"host": [
+						"{{ApiUrl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
