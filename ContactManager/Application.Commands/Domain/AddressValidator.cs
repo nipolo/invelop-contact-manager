@@ -6,10 +6,10 @@ namespace INV.ContactManager.Application.Commands.Domain
 	{
 		public AddressValidator()
 		{
-			RuleFor(address => address.Line1).NotNull();
-			RuleFor(address => address.Postcode).NotNull();
-			RuleFor(address => address.City).NotNull();
-			RuleFor(address => address.Country).NotNull();
+			RuleFor(address => address.Line1).NotNull().NotEmpty();
+			RuleFor(address => address.Postcode).NotNull().NotEmpty();
+			RuleFor(address => address.City).NotNull().NotEmpty();
+			RuleFor(address => address.Country).NotNull().NotEmpty();
 		}
 	}
 }

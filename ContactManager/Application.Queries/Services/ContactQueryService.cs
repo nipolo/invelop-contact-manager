@@ -28,6 +28,7 @@ namespace INV.ContactManager.Application.Commands.Services
 			var contacts = await dbContext
 					.Set<ContactState>()
 					.AsNoTracking()
+					.OrderByDescending(x => x.Id)
 					.Skip(recordsToSkip)
 					.Take(pageSize)
 					.Select(x => new ContactDto()
