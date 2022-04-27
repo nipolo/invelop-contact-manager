@@ -5,5 +5,7 @@ namespace INV.ContactManager.Application.Queries.Dtos.Contact
 	public class AllContactsDto
 	{
 		public IEnumerable<ContactDto> Contacts { get; set; }
+
+		public int TotalContacts { get; set; }
 	}
 }

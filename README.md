@@ -35,7 +35,7 @@ Angular frontend:
 1. Run [this](Deployment/Deployment.Development.cmd) cmd file 
 
 ### Local setup with Visual Studio
-1. Open Visual Studio
+1. Open **INV.ContactManager.Api.sln** with Visual Studio 2019/2022
 1. Set **docker-compose** as Startup Project
 1. Press F5
 

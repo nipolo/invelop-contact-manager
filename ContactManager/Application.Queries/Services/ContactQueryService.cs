@@ -47,9 +47,15 @@ namespace INV.ContactManager.Application.Commands.Services
 					})
 					.ToListAsync();
 
+			var totalContacts = await dbContext
+					.Set<ContactState>()
+					.AsNoTracking()
+					.CountAsync();
+
 			return new AllContactsDto()
 			{
-				Contacts = contacts
+				Contacts = contacts,
+				TotalContacts = totalContacts
 			};
 		}
 	}
