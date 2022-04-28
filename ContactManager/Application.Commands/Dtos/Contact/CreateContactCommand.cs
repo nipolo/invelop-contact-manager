@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+using MediatR;
+
 namespace INV.ContactManager.Application.Commands.Dtos.Contact
 {
-	public class CreateContactCommand
+	public class CreateContactCommand : IRequest
 	{
 		[Required]
 		public string FirstName { get; set; }

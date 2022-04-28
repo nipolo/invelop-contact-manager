@@ -5,6 +5,8 @@ using INV.ContactManager.Application.Commands.Module;
 using INV.ContactManager.Application.Queries.Module;
 using INV.ContactManager.Data.Adapter;
 
+using MediatR;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +36,9 @@ namespace INV.ContactManager.Api
 
 			builder.Services.AddApplicationCommandsModule(config);
 			builder.Services.AddApplicationQueriesModule(config);
+			builder.Services.AddMediatR(
+				typeof(Application.Queries.Module.ModuleExtensions),
+				typeof(Application.Commands.Module.ModuleExtensions));
 
 			AddSettings(builder.Services, config);
 

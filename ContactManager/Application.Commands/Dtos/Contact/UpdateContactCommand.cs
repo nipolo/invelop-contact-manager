@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+using MediatR;
+
 namespace INV.ContactManager.Application.Commands.Dtos.Contact
 {
-	public class UpdateContactCommand
+	public class UpdateContactCommand : IRequest
 	{
 		[Required]
 		public int Id { get; set; }
