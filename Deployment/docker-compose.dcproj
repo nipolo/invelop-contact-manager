@@ -6,6 +6,7 @@
     <ProjectGuid>76be45e9-aae7-4d10-a1d8-cd74459c8b90</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Deployment.BETA.light.sh" />
     <None Include="Deployment.BETA.sh" />
     <None Include="Deployment.Development.cmd" />
     <None Include="docker-compose.yml" />
