@@ -57,9 +57,3 @@ Import Postman collections and environments from [here](ContactManager/Tests)
    - Rich domain models are not needed (unnecessary complexity)
    - Create, Load and Update methods/functions do not accept commands and states as params because the domain objects should be isolated from data and transport/presentation layers
    - Mappers have been avoided for a reason
-
-
-
-
-
-
